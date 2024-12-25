@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aroma Haven</title>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <link rel="stylesheet" href="styles.css"> <!-- Link to style.css -->
+</head>
+<body>
+    
+  <!-- Dynamic Header -->
+  <div id="header"></div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Welcome to <span class="highlight">Aroma Haven</span></h1>
+      <p>Your ultimate destination for luxury fragrances.</p>
+      <button onclick="window.location.href='products.html'">Shop Now</button>
+    </div>
+  </section>
+
+  <!-- Featured Section -->
+  <section class="featured-section">
+    <h2>Featured Perfumes</h2>
+    <div class="featured-container">
+      <!-- Featured Perfume Card 1 -->
+      <div class="featured-card">
+        <img class="featured-image" src="Chanel No. 5.png" alt="Chanel No.5">
+        <div class="featured-info">
+          <div class="featured-title">Chanel No. 5</div>
+          <div class="featured-price">$120.99</div>
+        </div>
+      </div>
+      <!-- Featured Perfume Card 2 -->
+      <div class="featured-card">
+        <img class="featured-image" src="Dior Sauvage1.jpg" alt="Dior Sauvage">
+        <div class="featured-info">
+          <div class="featured-title">Dior Sauvage</div>
+          <div class="featured-price">$85.50</div>
+        </div>
+      </div>
+      <!-- Featured Perfume Card 3 -->
+      <div class="featured-card">
+        <img class="featured-image" src="Tom Ford Black Orchid.avif" alt="Tom Ford Black Orchid">
+        <div class="featured-info">
+          <div class="featured-title">Tom Ford Black Orchid</div>
+          <div class="featured-price">$145.75</div>
+        </div>
+      </div>
+      <!-- Featured Perfume Card 4 -->
+      <div class="featured-card">
+        <img class="featured-image" src="Creed Aventus.jpeg" alt="Creed Aventus">
+        <div class="featured-info">
+          <div class="featured-title">Creed Aventus</div>
+          <div class="featured-price">$320.00</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dynamic Footer -->
+  <div id="footer"></div>
+
+  <script>
+    // Load header and footer dynamically
+    $(document).ready(function () {
+      $('#header').load('header.html');
+      $('#footer').load('footer.html');
+    });
+  </script>
+
+</body>
+</html>

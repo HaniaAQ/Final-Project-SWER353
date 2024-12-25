@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products - Aroma Haven</title>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <link rel="stylesheet" href="styles.css"> <!-- Link to your styles.css file -->
+</head>
+<body>
+  <!-- Dynamic Header -->
+  <div id="header"></div>
+
+  <!-- Products Section -->
+  <section class="products">
+    <h1 class="products-title">Our Perfume Collection</h1>
+    <!-- Search Bar -->
+    <input type="text" id="searchInput" placeholder="Search for a perfume..." class="search-input">
+    <div class="products-container">
+        <!-- Product cards dynamically loaded here -->
+    </div>
+  </section>
+
+  <!-- Dynamic Footer -->
+  <div id="footer"></div>
+
+  <script>
+    $(document).ready(function () {
+      // Load header and footer dynamically
+      $('#header').load('header.html');
+      $('#footer').load('footer.html');
+    
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    
+      // AJAX to fetch perfume data from local perfumes.json file
+      $.ajax({
+        url: 'perfumes.json', // Local path to your JSON file
+        type: 'GET',
+        dataType: 'json',
+        success: function(data) {
+          renderPerfumes(data); // Render perfumes once data is fetched
+          setupSearch(data);    // Set up the search functionality
+        },
+        error: function(error) {
+          console.error("Error fetching perfume data:", error);
+        }
+      });
+    
+      // Function to render perfumes
+      function renderPerfumes(products) {
+        const container = $(".products-container");
+        container.empty(); // Clear container before appending products
+    
+        products.forEach((product) => {
+          const productCard = `
+            <div class="product-card">
+              <img class="product-image" src="${product.image || 'placeholder.jpg'}" alt="${product.title || 'Perfume'}">
+              <div class="product-info">
+                <div class="product-title">${product.title || 'Unnamed Perfume'}</div>
+                <div class="product-description">${(product.description || 'No description available').substring(0, 100)}...</div>
+                <div class="product-price">$${(product.price || 0).toFixed(2)}</div>
+                <button class="add-to-cart" data-product='${JSON.stringify(product)}'>Add to Cart</button>
+              </div>
+            </div>
+          `;
+          container.append(productCard);
+        });
+      }
+
+      // Add to Cart functionality
+      $(document).on('click', '.add-to-cart', function() {
+        const product = JSON.parse($(this).attr('data-product'));
+        cart.push(product); // Add product to the cart array
+        localStorage.setItem('cart', JSON.stringify(cart)); // Save cart to localStorage
+        updateCartDisplay(); // Update cart display and total price
+      });
+    
+      // Function to update cart display in the header
+      function updateCartDisplay() {
+        const cartItemCount = cart.length;
+        const cartTotal = cart.reduce((total, item) => total + item.price, 0).toFixed(2);
+    
+        // Update cart icon, item count, and total price in the header
+        $('.cart-badge').text(cartItemCount);
+        $('.cart-total').text(`$${cartTotal}`);
+      }
+
+      // Search functionality
+      function setupSearch(products) {
+        $('#searchInput').on('input', function() {
+          const query = $(this).val().toLowerCase(); // Get the search query
+          const filteredProducts = products.filter(product =>
+            product.title.toLowerCase().includes(query)
+          );
+          renderPerfumes(filteredProducts); // Re-render the filtered products
+        });
+      }
+    
+      // Initialize cart display on page load
+      updateCartDisplay();
+    });
+  </script>
+</body>
+</html>

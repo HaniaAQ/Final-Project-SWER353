@@ -1,0 +1,73 @@
+[
+    {
+      "id": 1,
+      "title": "Chanel No. 5",
+      "description": "A timeless fragrance with notes of jasmine, rose, and sandalwood.",
+      "price": 120.99,
+      "image": "Chanel No. 5.png"
+    },
+    {
+      "id": 2,
+      "title": "Dior Sauvage",
+      "description": "A fresh and spicy scent with notes of Calabrian bergamot and Sichuan pepper.",
+      "price": 85.50,
+      "image": "Dior Sauvage1.jpg"
+    },
+    {
+      "id": 3,
+     "title": "Yves Saint Laurent Libre",
+      "description": "A modern floral fragrance with notes of lavender, orange blossom, and musk.",
+      "price": 130.00,
+      "image": "Yves Saint Laurent Libre.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Creed Aventus",
+      "description": "A bold fragrance with notes of pineapple, birch, and musk.",
+      "price": 320.00,
+      "image": "Creed Aventus.jpeg"
+    },
+    {
+      "id": 5,
+      "title": "Gucci Bloom",
+      "description": "A delicate floral scent with notes of jasmine, tuberose, and Rangoon creeper.",
+      "price": 105.50,
+      "image": "Gucci Bloom.png"
+    },
+    {
+      "id": 6,
+      "title": "Tom Ford Black Orchid",
+      "description": "A rich, sensual fragrance with black orchid, vanilla, and patchouli.",
+      "price": 145.75,
+      "image": "Tom Ford Black Orchid.avif"
+    },
+    {
+      "id": 7,
+      "title": "Givenchy Dahlia Divin",
+      "description": "A luxurious floral fragrance with notes of jasmine, sandalwood, and amber.",
+      "price": 150.00,
+      "image": "Givenchy Dahlia Divin.avif"
+    },
+    {
+      "id": 8,
+      "title": "Armani Si",
+      "description": "A sophisticated fragrance with notes of black currant, rose, and vanilla.",
+      "price": 95.00,
+      "image": "Armani Si.jpeg"
+    },
+    {
+      "id": 9,
+      "title": "Viktor & Rolf Flowerbomb",
+      "description": "A sweet floral fragrance with notes of jasmine, orange blossom, and patchouli.",
+      "price": 140.00,
+      "image": "Viktor & Rolf Flowerbomb1.png"
+    },
+    {
+      "id": 10,
+      "title": "Hermes Twilly",
+      "description": "A spicy floral fragrance with notes of ginger, tuberose, and sandalwood.",
+      "price": 120.50,
+      "image": "Hermes Twilly.jpg"
+    }
+  ]
+  

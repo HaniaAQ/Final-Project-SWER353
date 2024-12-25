@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - Aroma Haven</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    h1, h2 {
+      color: #e91e63;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      color: #555;
+    }
+
+    /* Header and Footer */
+    .header, .footer {
+      background-color: #fff;
+      padding: 1rem 2rem;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      border-bottom: 2px solid #ddd;
+    }
+
+    .footer {
+      border-top: 2px solid #ddd;
+      margin-top: 2rem;
+    }
+
+    /* Content Section */
+    .about-us {
+      background-color: #fff;
+      padding: 2rem 1rem;
+      margin: 1rem auto;
+      max-width: 900px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .content-block {
+      margin-bottom: 3rem;
+    }
+
+    .content-block h2 {
+      font-size: 1.8rem;
+      margin-bottom: 0.75rem;
+      color: #e91e63;
+    }
+
+    .content-block p {
+      font-size: 1.1rem;
+      color: #555;
+    }
+
+    /* List Styles */
+    .styled-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .styled-list li {
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+
+    .styled-list li:before {
+      content: '✔';
+      color: #e91e63;
+      margin-right: 0.5rem;
+      font-size: 1.2rem;
+    }
+
+    /* Button Styles */
+    .button {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      color: #fff;
+      background-color: #e91e63;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 2rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #c2185b;
+    }
+
+    /* Highlighted Section */
+    .highlight-section {
+      background-color: #fce4ec;
+      padding: 1.5rem;
+      border-left: 5px solid #e91e63;
+      margin-bottom: 2rem;
+      border-radius: 5px;
+    }
+
+    .highlight-section p {
+      margin: 0;
+      color: #333;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Dynamic Header -->
+  <div id="header-container"></div>
+
+  <!-- About Us Content -->
+  <main class="about-us">
+    <section class="content">
+      <div class="content-block">
+        <h1>About Us</h1>
+        <div class="highlight-section">
+          <p>
+            At <strong>Aroma Haven</strong>, we believe that fragrance is more than just a scent—it's a powerful memory, a mood enhancer, and a form of self-expression. 
+          </p>
+        </div>
+        <p>
+          Founded with a passion for fine perfumes and a commitment to excellence, we’ve become a trusted destination for fragrance enthusiasts. Whether you're seeking a signature scent or a gift for someone special, Aroma Haven is here to guide you on an unforgettable sensory journey.
+        </p>
+      </div>
+
+      <div class="content-block">
+        <h2>Our Mission</h2>
+        <p>To bring the world of premium fragrances closer to you by offering:</p>
+        <ul class="styled-list">
+          <li><strong>Diverse Selections:</strong> A curated collection of perfumes catering to every preference, from floral and fresh to spicy and woody.</li>
+          <li><strong>Unparalleled Quality:</strong> Each fragrance is meticulously selected to ensure it meets the highest standards of craftsmanship.</li>
+          <li><strong>Customer-Centric Service:</strong> Your satisfaction is at the heart of everything we do.</li>
+        </ul>
+      </div>
+
+      <div class="content-block">
+        <h2>Our Vision</h2>
+        <p>
+          To become the most trusted and innovative fragrance store, inspiring confidence and joy in our customers through every scent we deliver.
+        </p>
+      </div>
+
+      <div class="content-block">
+        <h2>Our Values</h2>
+        <ul class="styled-list">
+          <li><strong>Authenticity:</strong> Every fragrance we offer is 100% genuine and sourced from trusted brands.</li>
+          <li><strong>Innovation:</strong> We constantly explore new trends in the fragrance world to bring you fresh experiences.</li>
+          <li><strong>Sustainability:</strong> We are committed to eco-friendly practices and work to reduce our environmental impact.</li>
+          <li><strong>Customer Delight:</strong> Building lasting relationships with our customers through trust and exceptional service.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- Dynamic Footer -->
+  <div id="footer-container"></div>
+
+  <script>
+    // Load header and footer dynamically
+    function loadComponent(containerId, file) {
+      fetch(file)
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById(containerId).innerHTML = data;
+        })
+        .catch(error => console.error(`Error loading ${file}:`, error));
+    }
+    loadComponent('header-container', 'header.html');
+    loadComponent('footer-container', 'footer.html');
+  </script>
+</body>
+</html>
